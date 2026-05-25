@@ -1,0 +1,92 @@
+---
+const { title, images } = Astro.props;
+
+const preview = images[0];
+const collectionId =
+  title.toLowerCase().replace(/\s+/g, "-");
+---
+
+<div class="collection-card">
+  <img
+    src={preview.src}
+    alt={preview.alt}
+    class="collection-preview"
+    data-collection={collectionId}
+  />
+
+  <h3>{title}</h3>
+</div>
+
+<script define:vars={{ images, collectionId }}>
+  const preview = document.querySelector(
+    `[data-collection="${collectionId}"]`
+  );
+
+  preview?.addEventListener("click", () => {
+    let currentIndex = 0;
+
+    const overlay = document.createElement("div");
+
+    overlay.classList.add("lightbox");
+
+    overlay.innerHTML = `
+      <button class="prev">←</button>
+
+      <div class="lightbox-content">
+        <img
+          src="${images[currentIndex].src}"
+          class="lightbox-image"
+        >
+
+        <div class="lightbox-info">
+          <h3>${images[currentIndex].alt}</h3>
+        </div>
+      </div>
+
+      <button class="next">→</button>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const image =
+      overlay.querySelector(".lightbox-image");
+
+    const info =
+      overlay.querySelector(".lightbox-info h3");
+
+    overlay.querySelector(".prev")
+      .addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        currentIndex =
+          (currentIndex - 1 + images.length)
+          % images.length;
+
+        update();
+      });
+
+    overlay.querySelector(".next")
+      .addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        currentIndex =
+          (currentIndex + 1)
+          % images.length;
+
+        update();
+      });
+
+    function update() {
+      image.src = images[currentIndex].src;
+
+      info.textContent =
+        images[currentIndex].alt;
+    }
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        overlay.remove();
+      }
+    });
+  });
+</script>

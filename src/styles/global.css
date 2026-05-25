@@ -265,7 +265,7 @@ h1 {
 .lightbox-content {
   background-color: #f0e7c8;
 
-  padding: 2rem;
+  padding: 1.5rem;
 
 
   max-width: 90vw;
@@ -287,13 +287,40 @@ h1 {
 
 /* INFO */
 .lightbox-info h3 {
-  margin: 0;
+  margin-top: 0;
+
+  transform: translateY(-15px);
 
   color: #d44b24;
 
   font-size: 1.5rem;
 }
 
+.collection-card {
+  break-inside: avoid;
+
+  margin-bottom: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collection-preview {
+  width: 100%;
+
+  display: block;
+
+  cursor: pointer;
+}
+
+.collection-card h3 {
+  margin-top: 1.5rem;
+
+  text-align: center;
+
+  color: #d44b24;
+}
 
 /*Carrossel*/
 
@@ -307,46 +334,63 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
 
   z-index: 9999;
 }
 
 /* CONTENT */
 .lightbox-content {
-  background: #f0e7c8;
-
-  padding: 1rem;
-
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   max-width: 90vw;
+  max-height: 90vh;
 }
 
 /* IMAGE */
 .lightbox-image {
-  max-width: 80vw;
-  max-height: 75vh;
+  max-width: 90vw;
+  max-height: 80vh;
 
-  display: block;
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
 }
 
-/* INFO */
+/* TITLE */
 .lightbox-info {
   margin-top: 1rem;
-
-  color: #d44b24;
+  color: #f0e7c8;
 }
 
 /* BUTTONS */
 .prev,
 .next {
+  position: fixed;
+  top: 50%;
+
+  transform: translateY(-50%);
+
   background: none;
   border: none;
 
-  color: white;
+  color: #f0e7c8;
 
   font-size: 3rem;
 
   cursor: pointer;
+
+  z-index: 10000;
+}
+
+/* LEFT BUTTON */
+.prev {
+  left: 40px;
+}
+
+/* RIGHT BUTTON */
+.next {
+  right: 40px;
 }
