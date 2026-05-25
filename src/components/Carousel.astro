@@ -1,0 +1,84 @@
+---
+const { images } = Astro.props;
+---
+
+<div class="gallery">
+  {
+    images.map((image, index) => (
+      <img
+        src={image.src}
+        alt={image.title}
+        class="gallery-image"
+        data-index={index}
+      />
+    ))
+  }
+</div>
+
+<script define:vars={{ images }}>
+  const galleryImages = document.querySelectorAll(".gallery-image");
+
+  let currentIndex = 0;
+
+  galleryImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      currentIndex = Number(img.dataset.index);
+
+      openLightbox();
+    });
+  });
+
+  function openLightbox() {
+    const overlay = document.createElement("div");
+
+    overlay.classList.add("lightbox");
+
+    overlay.innerHTML = `
+      <button class="prev">←</button>
+
+      <div class="lightbox-content">
+        <img src="${images[currentIndex].src}" class="lightbox-image">
+
+        <div class="lightbox-info">
+          <h3>${images[currentIndex].title}</h3>
+        </div>
+      </div>
+
+      <button class="next">→</button>
+    `;
+
+    document.body.appendChild(overlay);
+
+    overlay.querySelector(".prev").addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      currentIndex =
+        (currentIndex - 1 + images.length) % images.length;
+
+      updateLightbox(overlay);
+    });
+
+    overlay.querySelector(".next").addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      currentIndex =
+        (currentIndex + 1) % images.length;
+
+      updateLightbox(overlay);
+    });
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        overlay.remove();
+      }
+    });
+  }
+
+  function updateLightbox(overlay) {
+    overlay.querySelector(".lightbox-image").src =
+      images[currentIndex].src;
+
+    overlay.querySelector(".lightbox-info h3").textContent =
+      images[currentIndex].title;
+  }
+</script>

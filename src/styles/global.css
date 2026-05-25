@@ -231,3 +231,65 @@ h1 {
   margin: 1.5rem 0;
   color: #d44b24;
 }
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.01);
+}
+
+/* OVERLAY */
+.lightbox {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+
+  padding: 2rem;
+}
+
+/* CONTENT BOX */
+.lightbox-content {
+  background-color: #f0e7c8;
+
+  padding: 2rem;
+
+
+  max-width: 90vw;
+  max-height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+/* LARGE IMAGE */
+.lightbox-image {
+  max-width: 100%;
+  max-height: 75vh;
+
+  object-fit: contain;
+}
+
+/* INFO */
+.lightbox-info h3 {
+  margin: 0;
+
+  color: #d44b24;
+
+  font-size: 1.5rem;
+}
