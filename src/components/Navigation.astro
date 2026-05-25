@@ -1,0 +1,25 @@
+---
+
+import Social from './Social.astro';
+import '../styles/global.css';
+import { Instagram } from "lucide-astro";
+---
+
+<div class="logo">
+
+</div>
+<div id="main_menu" class="nav-links">
+    <a href="/">Home</a>
+    <a href="/portraits">Retratos</a>
+    <a href="/landscapes">Paisagens</a>
+    <a href="/shows">Eventos</a>
+    <a href="/academic">Académico</a>
+    <a href="/street">Street Photography</a>
+    <a href="/documentary">Documentário</a>
+    <a href="/about">Sobre + Contactos</a> 
+    <div class="separator">
+        <!-- <a href="/contact">Contacto</a> -->
+
+        <Social url="https://www.instagram.com/monteiro.gallery/" Icon={Instagram} />
+    </div>
+</div>

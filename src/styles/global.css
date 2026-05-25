@@ -1,0 +1,185 @@
+html {
+  background-color: #f0e7c8;
+  font-family: 'DM Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* SIDEBAR */
+.nav-links {
+  position: fixed;
+  top: 150px;
+  left: 0;
+
+  width: 240px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem 1rem;
+  background-color: #f0e7c8;
+
+  border-right: 1px solid #d44b24;
+}
+
+/* NAV LINKS */
+.nav-links a {
+  display: block;
+  padding: 6px 20px;
+  
+
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+
+  color: #d44b24;
+}
+
+.logo {
+  position: fixed;
+  top: 0px;
+  left: 0;
+
+  width: 240px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  background-color: #f0e7c8;
+
+  border-right: 1px solid #d44b24;
+}
+
+.separator {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* SCROLLABLE CONTENT AREA */
+.content {
+  margin-left: 240px;
+  height: 100vh;
+
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* HEADINGS */
+h1 {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 240px;
+  right: 0;
+
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f0e7c8;
+
+
+  color: #d44b24;
+  font-size: 0.85rem;
+
+  z-index: 1000;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-content h1 {
+  font-size: 3.5rem;
+  margin-top: 5px;
+  margin: 0 1.5rem 2rem 1.5rem;
+  color: #d44b24;
+}
+
+.about-content p {
+  margin: 0 1.5rem 2rem 1.5rem;
+  color: #d44b24;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.about-content img {
+  flex: 1;
+  width: 700px;
+  height: auto;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.contact-section {
+  margin-left: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+  display: flex;
+  flex-direction: column;
+  
+  color: #d44b24;
+  font-size: 2rem;
+}
+
+.contact-info {
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+  margin-left: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  color: #d44b24;
+}
+
+.instagram p {
+  margin-left: 1rem;
+  margin: 1rem 1.5rem;
+}
+
+.contact-info a {
+  color: #d44b24;
+}
+
+.experience {
+  margin-left: 1.5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  
+  color: #d44b24;
+}
+
+.experience h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.experience p {
+  margin-top: 0rem;
+  font-size: 1.1rem;
+}

@@ -1,0 +1,16 @@
+---
+const { url, Icon} = Astro.props;
+
+---
+
+<a href={url} target="_blank" rel="noopener">
+  <Icon size={20} />
+</a>
+
+<style>
+  a {
+    padding: 0.5rem 1rem;
+    color: #f0e7c8;
+    text-decoration: none;
+  }
+</style>
