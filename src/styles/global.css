@@ -19,7 +19,7 @@ body {
   top: 150px;
   left: 0;
 
-  width: 240px;
+  width: 250px;
   height: 100vh;
 
   display: flex;
@@ -34,6 +34,7 @@ body {
 .nav-links a {
   display: block;
   padding: 6px 20px;
+  margin-top: 8px;
   
 
   text-decoration: none;
