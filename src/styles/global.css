@@ -46,18 +46,24 @@ body {
 
 .logo {
   position: fixed;
-  top: 0px;
-  left: 0;
-
-  width: 240px;
-  height: 100vh;
+  top: 20px;
+  left: 40px;
 
   display: flex;
-  flex-direction: column;
-  padding: 2rem 1rem;
-  background-color: #f0e7c8;
+  align-items: center;
 
-  
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: 800;
+  color: #d44b24;
+
+  letter-spacing: 1px;
+
+  z-index: 1000;
+}
+
+.logo img {
+  height: clamp(150px, 4vw, 60px);
+  width: auto;
 }
 
 .separator {
