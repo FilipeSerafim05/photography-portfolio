@@ -9,9 +9,9 @@ import PhotoCard from '../components/PhotoCard.astro';
             <h2>Paisagens</h2>
         </div>
         <div class="gallery">
-            <PhotoCard src="/images/mar_madeira.jpg" alt="Blue" />
-            <PhotoCard src="/images/rio_landscape1.jpg" alt="No name" />
-            <PhotoCard src="/images/deck_oriente.jpg" alt="No name" />
+            <PhotoCard src={`${import.meta.env.BASE_URL}/images/mar_madeira.jpg`} alt="Blue" />
+            <PhotoCard src={`${import.meta.env.BASE_URL}/images/rio_landscape1.jpg`} alt="No name" />
+            <PhotoCard src={`${import.meta.env.BASE_URL}/images/deck_oriente.jpg`} alt="No name" />
         </div>
     </div>
 </BaseLayout>
