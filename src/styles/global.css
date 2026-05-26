@@ -455,6 +455,10 @@ h1 {
     display: block;
   }
 
+  body.lightbox-open .menu {
+    display: none;
+  }
+
   /* SIDEBAR */
 
   .nav-links {

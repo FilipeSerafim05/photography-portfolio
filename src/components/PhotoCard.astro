@@ -18,6 +18,8 @@ const { src, alt } = Astro.props;
     img.addEventListener("click", () => {
       const overlay = document.createElement("div");
 
+      document.body.classList.add("lightbox-open");
+
       overlay.classList.add("lightbox");
 
       overlay.innerHTML = `
@@ -33,6 +35,7 @@ const { src, alt } = Astro.props;
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) {
           overlay.remove();
+          document.body.classList.remove("lightbox-open");
         }
       });
 
