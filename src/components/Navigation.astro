@@ -8,6 +8,9 @@ import { Instagram } from "lucide-astro";
 <div class="logo">
     <img src={`${import.meta.env.BASE_URL}/images/FILIPE.png`} alt="Monteiro Photography Logo"/>
 </div>
+<button class="menu" aria-expanded="false" aria-label="Open Menu">
+  ☰
+</button>
 <div id="main_menu" class="nav-links">
     <a href={`${import.meta.env.BASE_URL}`}>Home</a>
     <a href={`${import.meta.env.BASE_URL}portraits`}>Retratos</a>
@@ -23,3 +26,20 @@ import { Instagram } from "lucide-astro";
         <Social url="https://www.instagram.com/monteiro.gallery/" Icon={Instagram} />
     </div>
 </div>
+
+<script>
+  const menu = document.querySelector('.menu');
+  const nav = document.querySelector('.nav-links');
+
+  menu?.addEventListener('click', () => {
+    nav?.classList.toggle('open');
+
+    const isExpanded =
+      menu.getAttribute('aria-expanded') === 'true';
+
+    menu.setAttribute(
+      'aria-expanded',
+      String(!isExpanded)
+    );
+  });
+</script>
