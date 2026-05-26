@@ -337,13 +337,12 @@ h1 {
 }
 
 .collection-card h3 {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 
   text-align: center;
 
   color: #d44b24;
 
-  transform: translateY(-10px);
 }
 
 /* =========================
@@ -391,7 +390,7 @@ h1 {
 }
 
 .lightbox-info {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 
   color: #f0e7c8;
 }
@@ -403,7 +402,6 @@ h1 {
 
   font-size: 1.5rem;
 
-  transform: translateY(-10px);
 }
 
 /* =========================
