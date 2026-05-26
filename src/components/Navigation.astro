@@ -9,14 +9,14 @@ import { Instagram } from "lucide-astro";
     <img src="/images/FILIPE.png" alt="Monteiro Photography Logo"/>
 </div>
 <div id="main_menu" class="nav-links">
-    <a href="/">Home</a>
-    <a href="/portraits">Retratos</a>
-    <a href="/landscapes">Paisagens</a>
-    <a href="/shows">Eventos</a>
-    <a href="/academic">Académico</a>
-    <a href="/street">Street Photography</a>
-    <a href="/documentary">Documentário</a>
-    <a href="/about">Sobre + Contactos</a> 
+    <a href={`${import.meta.env.BASE_URL}`}>Home</a>
+    <a href={`${import.meta.env.BASE_URL}portraits`}>Retratos</a>
+    <a href={`${import.meta.env.BASE_URL}landscapes`}>Paisagens</a>
+    <a href={`${import.meta.env.BASE_URL}shows`}>Eventos</a>
+    <a href={`${import.meta.env.BASE_URL}academic`}>Académico</a>
+    <a href={`${import.meta.env.BASE_URL}street`}>Street Photography</a>
+    <a href={`${import.meta.env.BASE_URL}documentary`}>Documentário</a>
+    <a href={`${import.meta.env.BASE_URL}about`}>Sobre + Contactos</a> 
     <div class="separator">
         <!-- <a href="/contact">Contacto</a> -->
 
