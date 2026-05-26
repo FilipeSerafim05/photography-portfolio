@@ -371,7 +371,9 @@ h1 {
 
   background-color: #f0e7c8;
 
-  padding: 1.5rem;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 
   max-width: 90vw;
   max-height: 90vh;
@@ -390,13 +392,13 @@ h1 {
 }
 
 .lightbox-info {
-  margin-top: 0.5rem;
+  margin-top: 0rem;
 
   color: #f0e7c8;
 }
 
 .lightbox-info h3 {
-  margin-top: 0;
+  margin-top: -3px;
 
   color: #d44b24;
 
