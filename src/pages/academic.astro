@@ -1,26 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Gallery from '../components/Carousel.astro';
+import CollectionCard from '../components/CollectionCard.astro';
 
-const images = [
-    { src: "/images/alwaysrush.jpg", alt: "Always in a Rush" },
-    { src: "/images/guilhermeGrade.jpg", alt: "Guilherme Collection" },
-    { src: "/images/senhorFonte.jpg", alt: "Senhor Fonte" },
-    { src: "/images/protestoEstudantebw.jpg", alt: "Manifestação Estudante 2026" },
-    { src: "/images/duoRiso.jpg", alt: "Duo Riso" },
-    { src: "/images/velhotePraia.jpg", alt: "Velhote Praia" },
-    { src: "/images/guilhermePonte.jpg", alt: "Guilherme Collection" },
-    { src: "/images/ornatos.jpg", alt: "Ornatos" },
-    { src: "/images/25abrilinimigo.jpg", alt: "25 de Abril Inimigo" }
+const estudanteImages = [
+  {
+    src: "/images/protestoEstudantebw.jpg",
+    alt: "Manifestação Estudante 2026"
+  },
+  {
+    src: "/images/estado_falha.jpg",
+    alt: "Manifestação Estudante 2026"
+  },
+  {
+    src: "/images/protesto1.jpg",
+    alt: "Manifestação Estudante 2026"
+  },
+  {
+    src: "/images/arrebentar.jpg",
+    alt: "Manifestação Estudante 2026"
+  }
 ];
+
 ---
 
 <BaseLayout>
-  <div class="academico">
-    <div class="title">
-        <h2>Académico</h2>
+    <div class="academico">
+        <div class="title">
+            <h2>Académico</h2>
+        </div>
+        <div class="gallery">
+
+          <CollectionCard title="Manifestação Estudante 2026" images={estudanteImages} />
+
+        </div>
     </div>
-    <Gallery images={images} />
-  </div>
-    
 </BaseLayout>
