@@ -7,7 +7,7 @@ export default defineConfig({
         enabled: false
     },
     base: 'filipe.serafim',
-    trailingSlash: 'always',
+    trailingSlash: 'never',
 });
 
 
