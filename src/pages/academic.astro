@@ -21,6 +21,33 @@ const estudanteImages = [
   }
 ];
 
+const cortejo26Images = [
+  {
+    src: `${import.meta.env.BASE_URL}/images/IMG_4284.webp`,
+    alt: "Cortejo 2026"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}/images/IMG_4367.webp`,
+    alt: "Cortejo 2026"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}/images/cortejoCarroEletro.webp`,
+    alt: "Cortejo 2026"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}/images/IMG_4256.webp`,
+    alt: "Cortejo 2026"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}/images/IMG_4195.webp`,
+    alt: "Cortejo 2026"
+  },
+  {
+    src: `${import.meta.env.BASE_URL}/images/IMG_4229.webp`,
+    alt: "Cortejo 2026"
+  }
+];
+
 ---
 
 <BaseLayout>
@@ -31,6 +58,7 @@ const estudanteImages = [
         <div class="gallery">
 
           <CollectionCard title="Manifestação Estudante 2026" images={estudanteImages} />
+          <CollectionCard title="Cortejo 2026" images={cortejo26Images} />
 
         </div>
     </div>
