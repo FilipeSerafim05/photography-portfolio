@@ -6,7 +6,7 @@ export default defineConfig({
     devToolbar: {
         enabled: false
     },
-    base: 'web.tecnico.ulisboa.pt/filipe.serafim',
+    base: 'filipe.serafim',
     trailingSlash: 'always',
 });
 

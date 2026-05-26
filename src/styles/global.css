@@ -34,7 +34,7 @@ body {
 .nav-links a {
   display: block;
   padding: 6px 20px;
-  margin-top: 8px;
+  margin-top: 6px;
   
 
   text-decoration: none;
@@ -95,7 +95,7 @@ h1 {
   left: 240px;
   right: 0;
 
-  height: 50px;
+  height: 30px;
 
   display: flex;
   align-items: center;
