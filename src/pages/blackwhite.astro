@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoCard from '../components/PhotoCard.astro';
+---
+
+
+<BaseLayout theme="dark">
+  <div class="gallery">
+    <PhotoCard src={`${import.meta.env.BASE_URL}/images/wb_fumador_montra.webp`} alt="Taking a break" />
+    <PhotoCard src={`${import.meta.env.BASE_URL}/images/wb_senhora_filha_metro.webp`} alt="Awaiting the city" />
+    <PhotoCard src={`${import.meta.env.BASE_URL}/images/wb_tower_bridge.webp`} alt="Singing" />
+    <PhotoCard src={`${import.meta.env.BASE_URL}/images/wb_loneliness.webp`} alt="Loneliness" />
+    <PhotoCard src={`${import.meta.env.BASE_URL}/images/wb_senhorFonte.webp`} alt="Water" />
+    <PhotoCard src={`${import.meta.env.BASE_URL}/images/wb_FilipeSerafim_ConcursoLEICA.webp`} alt="Sea Sale" />
+    <PhotoCard src={`${import.meta.env.BASE_URL}/images/wb_senhores_rio.webp`} alt="Bonding by the river" />
+  </div>
+</BaseLayout>

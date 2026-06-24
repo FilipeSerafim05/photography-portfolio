@@ -1,6 +1,22 @@
 html {
-  background-color: #f0e7c8;
+  --bg: #f0e7c8;
+  --text: #d44b24;
+  --surface: #f0e7c8;
+  --accent: #d44b24;
+  --lightbox-bg: rgba(0, 0, 0, 0.9);
+
+  background-color: var(--bg);
   font-family: 'DM Sans', sans-serif;
+}
+
+/* DARK / MONOCHROME MODE */
+[data-theme="dark"] {
+  --bg: #000000;
+  --text: #eaeaea;
+  --surface: #000000;
+  --accent: #eaeaea;
+  --lightbox-bg: rgba(0, 0, 0, 0.92);
+  
 }
 
 * {
@@ -11,6 +27,18 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+}
+
+.logo-dark {
+  display: none;
+}
+
+[data-theme="dark"] .logo-light {
+  display: none;
+}
+
+[data-theme="dark"] .logo-dark {
+  display: block;
 }
 
 /* =========================
@@ -30,7 +58,7 @@ body {
   border: none;
 
   font-size: 2rem;
-  color: #d44b24;
+  color: var(--accent);
 
   cursor: pointer;
 }
@@ -52,7 +80,7 @@ body {
 
   padding: 2rem 1rem;
 
-  background-color: #f0e7c8;
+  background-color: var(--surface);
 
   z-index: 9999;
 }
@@ -72,7 +100,7 @@ body {
 
   text-transform: uppercase;
 
-  color: #d44b24;
+  color: var(--accent);
 }
 
 /* =========================
@@ -90,7 +118,7 @@ body {
   font-size: clamp(1.2rem, 2vw, 2rem);
   font-weight: 800;
 
-  color: #d44b24;
+  color: var(--accent);
 
   letter-spacing: 1px;
 
@@ -130,6 +158,8 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+
+  color: var(--accent);
 }
 
 /* =========================
@@ -149,9 +179,9 @@ h1 {
   align-items: center;
   justify-content: center;
 
-  background-color: #f0e7c8;
+  background-color: var(--surface);
+  color: var(--accent);
 
-  color: #d44b24;
   font-size: 0.85rem;
 
   z-index: 1000;
@@ -179,13 +209,13 @@ h1 {
 
   margin: 0 1.5rem 2rem 1.5rem;
 
-  color: #d44b24;
+  color: var(--accent);
 }
 
 .about-content p {
   margin: 0 1.5rem 2rem 1.5rem;
 
-  color: #d44b24;
+  color: var(--accent);
 
   font-size: 1.1rem;
   font-weight: 500;
@@ -215,7 +245,7 @@ h1 {
 
   gap: 0.5rem;
 
-  color: #d44b24;
+  color: var(--accent);
   font-size: 2rem;
 }
 
@@ -230,15 +260,16 @@ h1 {
 
   gap: 1rem;
 
-  color: #d44b24;
+  color: var(--accent);
 }
 
 .contact-info a {
-  color: #d44b24;
+  color: var(--accent);
 }
 
 .instagram p {
   margin: 1rem 1.5rem;
+  color: var(--accent);
 }
 
 /* =========================
@@ -253,7 +284,7 @@ h1 {
   display: flex;
   flex-direction: column;
 
-  color: #d44b24;
+  color: var(--accent);
 }
 
 .experience h2 {
@@ -311,7 +342,7 @@ h1 {
 
   margin: 1.5rem 0;
 
-  color: #d44b24;
+  color: var(--accent);
 }
 
 /* =========================
@@ -337,12 +368,11 @@ h1 {
 }
 
 .collection-card h3 {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 
   text-align: center;
 
-  color: #d44b24;
-
+  color: var(--accent);
 }
 
 /* =========================
@@ -353,7 +383,7 @@ h1 {
   position: fixed;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.9);
+  background: var(--lightbox-bg);
 
   display: flex;
   align-items: center;
@@ -369,7 +399,7 @@ h1 {
   flex-direction: column;
   align-items: center;
 
-  background-color: #f0e7c8;
+  background-color: var(--surface);
 
   padding-top: 1.5rem;
   padding-left: 1.5rem;
@@ -395,16 +425,15 @@ h1 {
 .lightbox-info {
   margin-top: 0rem;
 
-  color: #f0e7c8;
+  color: var(--text);
 }
 
 .lightbox-info h3 {
   margin-top: -3px;
 
-  color: #d44b24;
+  color: var(--accent);
 
   font-size: 1.5rem;
-
 }
 
 /* =========================
@@ -421,7 +450,7 @@ h1 {
   background: none;
   border: none;
 
-  color: #f0e7c8;
+  color: var(--accent);
 
   font-size: 3rem;
 
@@ -436,6 +465,27 @@ h1 {
 
 .next {
   right: 40px;
+}
+
+#darkroom-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transition: opacity 0.9s ease;
+}
+
+/* active state */
+#darkroom-overlay.active {
+  opacity: 1;
+}
+
+/* optional “camera exposure” feel */
+body.darkroom-exit {
+  filter: brightness(0.6) blur(2px);
+  transition: filter 0.6s ease;
 }
 
 /* =========================
@@ -454,8 +504,6 @@ h1 {
 
 @media (max-width: 768px) {
 
-  /* MENU BUTTON */
-
   .menu {
     display: block;
   }
@@ -463,8 +511,6 @@ h1 {
   body.lightbox-open .menu {
     display: none;
   }
-
-  /* SIDEBAR */
 
   .nav-links {
     position: fixed;
@@ -484,8 +530,6 @@ h1 {
     left: 0;
   }
 
-  /* LOGO */
-
   .logo {
     position: static;
 
@@ -499,8 +543,6 @@ h1 {
     height: 90px;
   }
 
-  /* CONTENT */
-
   .content {
     margin-left: 0;
 
@@ -508,8 +550,6 @@ h1 {
 
     padding: 1rem;
   }
-
-  /* FOOTER */
 
   .bottom-bar {
     position: static;
@@ -522,8 +562,6 @@ h1 {
 
     left: 0;
   }
-
-  /* ABOUT */
 
   .about-content {
     flex-direction: column;
@@ -544,20 +582,14 @@ h1 {
     margin-right: 0;
   }
 
-  /* CONTACT */
-
   .contact-info {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  /* GALLERY */
-
   .gallery {
     column-count: 1;
   }
-
-  /* LIGHTBOX BUTTONS */
 
   .prev,
   .next {

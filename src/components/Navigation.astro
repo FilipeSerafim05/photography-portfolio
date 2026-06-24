@@ -6,7 +6,9 @@ import { Instagram } from "lucide-astro";
 ---
 
 <div class="logo">
-    <img src={`${import.meta.env.BASE_URL}/images/FILIPE.webp`} alt="Monteiro Photography Logo"/>
+    <img class="logo-light" src={`${import.meta.env.BASE_URL}/images/FILIPE.webp`} alt="Monteiro Photography Logo"/>
+    <img class="logo-dark" src={`${import.meta.env.BASE_URL}/images/wb_FILIPE.webp`} alt="Black White Monteiro Photography Logo"/>
+    
 </div>
 <button class="menu" aria-expanded="false" aria-label="Open Menu">
   ☰
@@ -19,6 +21,7 @@ import { Instagram } from "lucide-astro";
     <a href={`${import.meta.env.BASE_URL}academic`}>Académico</a>
     <a href={`${import.meta.env.BASE_URL}street`}>Street Photography</a>
     <a href={`${import.meta.env.BASE_URL}documentary`}>Documentário</a>
+    <a href={`${import.meta.env.BASE_URL}blackwhite`}>Black & White</a>
     <a href={`${import.meta.env.BASE_URL}about`}>Sobre + Contactos</a> 
     <div class="separator">
         <!-- <a href="/contact">Contacto</a> -->

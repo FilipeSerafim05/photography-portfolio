@@ -2,9 +2,31 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+
+
+const {theme = 'light'} = Astro.props;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("dark-room");
+
+  document.querySelectorAll("a[href='/blackwhite']").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // start "darkroom closing"
+      document.body.classList.add("darkroom-exit");
+      overlay.classList.add("active");
+
+      // delay navigation until animation completes
+      setTimeout(() => {
+        window.location.href = "/blackwhite";
+      }, 900);
+    });
+  });
+});
 ---
 
-<html lang="en">
+<html lang="en" data-theme={theme}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href=`${import.meta.env.BASE_URL}/FILIPE.svg`/>
@@ -16,7 +38,9 @@ import '../styles/global.css';
     <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   </head>
+  <div class="dark-room">
 
+  </div>
   <body>
     <aside class="side-bar">
       <Header />
