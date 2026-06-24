@@ -467,22 +467,24 @@ h1 {
   right: 40px;
 }
 
-#darkroom-overlay {
+.dark-room {
   position: fixed;
   inset: 0;
-  background: #000;
+  background: black;
+
   opacity: 0;
   pointer-events: none;
+
   z-index: 99999;
+
   transition: opacity 0.9s ease;
 }
 
-/* active state */
-#darkroom-overlay.active {
+.dark-room.active {
   opacity: 1;
 }
 
-/* optional “camera exposure” feel */
+/* optional cinematic blur */
 body.darkroom-exit {
   filter: brightness(0.6) blur(2px);
   transition: filter 0.6s ease;
