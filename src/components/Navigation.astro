@@ -2,13 +2,13 @@
 
 import Social from './Social.astro';
 import '../styles/global.css';
-import { Instagram } from "lucide-astro";
+
 ---
 
 <div class="logo">
-    <img class="logo-light" src={`${import.meta.env.BASE_URL}/images/FILIPE.webp`} alt="Monteiro Photography Logo"/>
-    <img class="logo-dark" src={`${import.meta.env.BASE_URL}/images/wb_FILIPE.webp`} alt="Black White Monteiro Photography Logo"/>
-    
+  <div class="logo-area">
+      <img class="logo-dark" src={`${import.meta.env.BASE_URL}/images/wb_FILIPE.webp`} alt="Black White Monteiro Photography Logo"/>
+  </div>
 </div>
 <button class="menu" aria-expanded="false" aria-label="Open Menu">
   ☰
@@ -26,7 +26,6 @@ import { Instagram } from "lucide-astro";
     <div class="separator">
         <!-- <a href="/contact">Contacto</a> -->
 
-        <Social url="https://www.instagram.com/monteiro.gallery/" Icon={Instagram} />
     </div>
 </div>
 

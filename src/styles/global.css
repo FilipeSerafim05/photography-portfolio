@@ -1,44 +1,42 @@
+
 html {
-  --bg: #f0e7c8;
-  --text: #d44b24;
-  --surface: #f0e7c8;
-  --accent: #d44b24;
+  --bg: #ffffff;
+  --text: #000000;
+  --surface: #ffffff;
+  --accent: #000000;
   --lightbox-bg: rgba(0, 0, 0, 0.9);
 
   background-color: var(--bg);
   font-family: 'DM Sans', sans-serif;
 }
 
-/* DARK / MONOCHROME MODE */
+/* DARK ROOM MODE */
 [data-theme="dark"] {
   --bg: #000000;
-  --text: #eaeaea;
+  --text: #ffffff;
   --surface: #000000;
-  --accent: #eaeaea;
+  --accent: #ffffff;
   --lightbox-bg: rgba(0, 0, 0, 0.92);
-  
 }
 
 * {
   box-sizing: border-box;
 }
 
+html,
+body {
+  background-color: var(--bg);
+  color: var(--text);
+
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
+
 body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-}
-
-.logo-dark {
-  display: none;
-}
-
-[data-theme="dark"] .logo-light {
-  display: none;
-}
-
-[data-theme="dark"] .logo-dark {
-  display: block;
 }
 
 /* =========================
@@ -58,7 +56,7 @@ body {
   border: none;
 
   font-size: 2rem;
-  color: var(--accent);
+  color: #ffffff;
 
   cursor: pointer;
 }
@@ -80,13 +78,11 @@ body {
 
   padding: 2rem 1rem;
 
-  background-color: var(--surface);
+  background-color: #000000;
 
   z-index: 9999;
 }
-
 /* NAV LINKS */
-
 .nav-links a {
   display: block;
 
@@ -100,13 +96,11 @@ body {
 
   text-transform: uppercase;
 
-  color: var(--accent);
+  color: #ffffff;
 }
-
 /* =========================
-   LOGO
+   LOGO / HEADER
 ========================= */
-
 .logo {
   position: fixed;
   top: 20px;
@@ -118,17 +112,42 @@ body {
   font-size: clamp(1.2rem, 2vw, 2rem);
   font-weight: 800;
 
-  color: var(--accent);
+  /* Header ALWAYS black */
+  background-color: #000000;
 
   letter-spacing: 1px;
 
   z-index: 1000;
 }
 
+.logo-area {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+
+  width: 250px;
+  height: 100vh;
+
+  padding-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #000000;
+
+  z-index: 9999;
+
+}
+
 .logo img {
   height: clamp(60px, 8vw, 150px);
   width: auto;
 }
+
+/* =========================
+   SEPARATOR
+========================= */
 
 .separator {
   margin-top: 50px;
@@ -467,6 +486,10 @@ h1 {
   right: 40px;
 }
 
+/* =========================
+   DARK ROOM
+========================= */
+
 .dark-room {
   position: fixed;
   inset: 0;
@@ -484,7 +507,8 @@ h1 {
   opacity: 1;
 }
 
-/* optional cinematic blur */
+/* OPTIONAL CINEMATIC BLUR */
+
 body.darkroom-exit {
   filter: brightness(0.6) blur(2px);
   transition: filter 0.6s ease;
