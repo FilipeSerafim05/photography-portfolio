@@ -1,17 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhotoCard from '../components/PhotoCard.astro';
+import LandingPage from '../components/LandingPage.astro';
 ---
 
 <BaseLayout>
-  <div class="gallery">
-	<PhotoCard src={`${import.meta.env.BASE_URL}/images/alwaysrush.webp`} alt="Always in a Rush" />
-	<PhotoCard src={`${import.meta.env.BASE_URL}/images/guilhermeGrade.webp`} alt="Guilherme Collection" />
-	<PhotoCard src={`${import.meta.env.BASE_URL}/images/protestoEstudantebw.webp`} alt="Manifestação Estudante 2026" />
-	<PhotoCard src={`${import.meta.env.BASE_URL}/images/duoRiso.webp`} alt="Duo Riso" />
-	<PhotoCard src={`${import.meta.env.BASE_URL}/images/velhotePraia.webp`} alt="Velhote Praia" />
-	<PhotoCard src={`${import.meta.env.BASE_URL}/images/guilhermePonte.webp`} alt="Guilherme Collection" />
-	<PhotoCard src={`${import.meta.env.BASE_URL}/images/ornatos.webp`} alt="Ornatos" />
-	<PhotoCard src={`${import.meta.env.BASE_URL}/images/25abrilinimigo.webp`} alt="25 de Abril Inimigo" />
-  </div>
+	<LandingPage />
+	<div class="gallery">
+		<PhotoCard src={`${import.meta.env.BASE_URL}/images/alwaysrush.webp`} alt="Always in a Rush" />
+		<PhotoCard src={`${import.meta.env.BASE_URL}/images/guilhermeGrade.webp`} alt="Guilherme Collection" />
+		<PhotoCard src={`${import.meta.env.BASE_URL}/images/protestoEstudantebw.webp`} alt="Manifestação Estudante 2026" />
+		<PhotoCard src={`${import.meta.env.BASE_URL}/images/velhotePraia.webp`} alt="Velhote Praia" />
+		<PhotoCard src={`${import.meta.env.BASE_URL}/images/guilhermePonte.webp`} alt="Guilherme Collection" />
+		<PhotoCard src={`${import.meta.env.BASE_URL}/images/duoRiso.webp`} alt="Duo Riso" />
+		<PhotoCard src={`${import.meta.env.BASE_URL}/images/ornatos.webp`} alt="Ornatos" />
+		<PhotoCard src={`${import.meta.env.BASE_URL}/images/25abrilinimigo.webp`} alt="25 de Abril Inimigo" />
+	</div>
 </BaseLayout>

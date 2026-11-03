@@ -16,7 +16,6 @@ html {
   --text: #ffffff;
   --surface: #000000;
   --accent: #ffffff;
-  --lightbox-bg: rgba(0, 0, 0, 0.92);
 }
 
 * {
@@ -67,35 +66,31 @@ body {
 
 .nav-links {
   position: fixed;
-  top: 150px;
-  left: 0;
+  top: 0;
+  right: 0;
 
-  width: 250px;
-  height: 100vh;
+  height: 60px;
+  width: calc(100% - 250px);
 
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 
-  padding: 2rem 1rem;
-
+  padding: 0 30px;
   background-color: #000000;
 
-  z-index: 9999;
+  z-index: 10000;
 }
 /* NAV LINKS */
 .nav-links a {
   display: block;
 
-  padding: 6px 20px;
-  margin-top: 6px;
+  padding: 2px 20px;
 
   text-decoration: none;
-
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   font-weight: bolder;
-
   text-transform: uppercase;
-
   color: #ffffff;
 }
 /* =========================
@@ -103,46 +98,40 @@ body {
 ========================= */
 .logo {
   position: fixed;
-  top: 20px;
-  left: 40px;
+  top: 0;
+  left: 0;
 
   display: flex;
   align-items: center;
 
-  font-size: clamp(1.2rem, 2vw, 2rem);
-  font-weight: 800;
-
-  /* Header ALWAYS black */
+  height: 60px;
   background-color: #000000;
 
-  letter-spacing: 1px;
+  z-index: 10000;
+}
 
-  z-index: 1000;
+.logo-dark {
+  width: auto;
+  height: 42px;
+  object-fit: contain;
 }
 
 .logo-area {
   position: fixed;
-  left: 0px;
-  top: 0px;
+  top: 0;
+  left: 0;
 
-  width: 250px;
-  height: 100vh;
+  width: 100%;
+  height: 60px;
 
-  padding-top: 50px;
+  padding: 0 30px;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
 
   background-color: #000000;
 
   z-index: 9999;
-
-}
-
-.logo img {
-  height: clamp(60px, 8vw, 150px);
-  width: auto;
 }
 
 /* =========================
@@ -161,7 +150,8 @@ body {
 ========================= */
 
 .content {
-  margin-left: 240px;
+  margin-left: 0px;
+  margin-top: 60px;
 
   min-height: 100vh;
 
@@ -189,10 +179,10 @@ h1 {
   position: fixed;
 
   bottom: 0;
-  left: 240px;
+  left: 0;
   right: 0;
 
-  height: 30px;
+  height: 25px;
 
   display: flex;
   align-items: center;
@@ -209,6 +199,95 @@ h1 {
 /* =========================
    ABOUT PAGE
 ========================= */
+
+.landing-info {
+  position: relative;
+
+  width: 100%;
+  height: min(90vh, 750px);
+
+  margin-bottom: 1.1rem;
+
+  overflow: hidden;
+
+  background: #000000;
+}
+
+/* Background photograph */
+.landing-image {
+  position: absolute;
+  inset: 0;
+  ;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+}
+
+/* Dark overlay */
+.landing-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  z-index: 1;
+}
+
+/* Location text */
+.location-text {
+  position: absolute;
+
+  top: 20%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: white;
+  
+
+  padding: 4px 8px;
+
+  z-index: 2;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.location-text h2 {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  margin: 0;
+}
+
+/* Main title */
+.landing-title {
+    position: absolute;
+    bottom: 28%;
+    left: -0.60rem;
+
+    width: 100%;
+    margin: 0;
+
+    z-index: 2;
+}
+
+.landing-title h1 {
+    margin: 0;
+    padding: 0;
+
+    color: white;
+    text-align: center;
+
+    font-size: clamp(4rem, 19vw, 28rem);
+    font-weight: 900;
+    line-height: 0.8;
+
+    letter-spacing: -0.06em;
+    white-space: nowrap;
+}
 
 .about-content {
   display: flex;
@@ -322,19 +401,18 @@ h1 {
 ========================= */
 
 .gallery {
-  column-count: 3;
-  column-gap: 16px;
+  column-count: 4;
+  column-gap: 5px;
 }
 
 .gallery img {
   width: 100%;
   height: auto;
 
-  margin-bottom: 16px;
+  margin-bottom: 5px;
+  
 
   display: block;
-
-  border-radius: 4px;
 
   transition: transform 0.2s ease;
 }
@@ -346,6 +424,7 @@ h1 {
 .gallery-image {
   width: 100%;
   height: auto;
+
 
   cursor: pointer;
 
