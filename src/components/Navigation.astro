@@ -1,42 +1,83 @@
----
 
+---
 import Social from './Social.astro';
 import '../styles/global.css';
 
+const base = import.meta.env.BASE_URL;
+
+const galleries = [
+  { name: 'Street Photography', url: `${base}street` },
+  { name: 'Retratos', url: `${base}portraits` },
+  { name: 'Eventos', url: `${base}shows` },
+  { name: 'Documentário', url: `${base}documentary` },
+  { name: 'Paisagens', url: `${base}landscapes` },
+];
 ---
 
 <div class="logo">
-  <div class="logo-area">
-      <img class="logo-dark" src={`${import.meta.env.BASE_URL}/images/wb_FILIPE.webp`} alt="Black White Monteiro Photography Logo"/>
-  </div>
-</div>
-<button class="menu" aria-expanded="false" aria-label="Open Menu">
-  ☰
-</button>
-<div id="main_menu" class="nav-links">
-    <a href={`${import.meta.env.BASE_URL}`}>Home</a>
-    <a href={`${import.meta.env.BASE_URL}portraits`}>Galerias</a>
-    <a href={`${import.meta.env.BASE_URL}blackwhite`}>Câmera Escura</a>
-    <a href={`${import.meta.env.BASE_URL}about`}>Sobre + Contactos</a> 
-    <div class="separator">
-        <!-- <a href="/contact">Contacto</a> -->
-
+    <div class="logo-area">
+        <img
+            class="logo-dark"
+            src={`${base}images/wb_FILIPE.webp`}
+            alt="Black White Monteiro Photography Logo"
+        />
     </div>
 </div>
 
+<button class="menu" aria-expanded="false" aria-label="Open Menu">
+    ☰
+</button>
+
+<div id="main_menu" class="nav-links">
+    <a href={base}>Home</a>
+
+    <div class="gallery-dropdown">
+        <button
+            class="gallery-trigger"
+            aria-expanded="false"
+            aria-haspopup="true"
+        >
+            Galerias
+        </button>
+
+        <div class="gallery-menu">
+            {galleries.map((gallery) => (
+                <a href={gallery.url}>{gallery.name}</a>
+            ))}
+        </div>
+    </div>
+
+    <a href={`${base}blackwhite`}>Câmera Escura</a>
+    <a href={`${base}about`}>Sobre + Contactos</a>
+
+    <div class="separator"></div>
+</div>
+
 <script>
-  const menu = document.querySelector('.menu');
-  const nav = document.querySelector('.nav-links');
+    const menu = document.querySelector('.menu');
+    const nav = document.querySelector('.nav-links');
 
-  menu?.addEventListener('click', () => {
-    nav?.classList.toggle('open');
+    menu?.addEventListener('click', () => {
+        nav?.classList.toggle('open');
 
-    const isExpanded =
-      menu.getAttribute('aria-expanded') === 'true';
+        const isExpanded = menu.getAttribute('aria-expanded') === 'true';
+        menu.setAttribute('aria-expanded', String(!isExpanded));
+    });
 
-    menu.setAttribute(
-      'aria-expanded',
-      String(!isExpanded)
-    );
-  });
+    const dropdown = document.querySelector('.gallery-dropdown');
+    const trigger = dropdown?.querySelector('.gallery-trigger');
+
+    trigger?.addEventListener('click', () => {
+        const isOpen = dropdown?.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) return;
+
+    if (!dropdown?.contains(event.target)) {
+        dropdown?.classList.remove('open');
+        trigger?.setAttribute('aria-expanded', 'false');
+    }
+});
 </script>

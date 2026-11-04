@@ -1,21 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CollectionCard from '../components/CollectionCard.astro';
-
-const guilhermeImages = [
-  {
-    src: `${import.meta.env.BASE_URL}/images/guilhermeGrade.webp`,
-    alt: "Guilherme Collection"
-  },
-  {
-    src: `${import.meta.env.BASE_URL}/images/guilhermePonte.webp`,
-    alt: "Guilherme Collection"
-  },
-  {
-    src: `${import.meta.env.BASE_URL}/images/guilherme_telemovel.webp`,
-    alt: "Guilherme Collection"
-  }
-];
+import PhotoCard from '../components/PhotoCard.astro';
 
 ---
 
@@ -25,8 +10,9 @@ const guilhermeImages = [
             <h2>Retratos</h2>
         </div>
         <div class="gallery">
-
-            <CollectionCard title="Guilherme Collection" images={guilhermeImages}/>
+            <PhotoCard src={`${import.meta.env.BASE_URL}/images/guilhermeGrade.webp`} alt="Guilherme Collection" />
+            <PhotoCard src={`${import.meta.env.BASE_URL}/images/guilhermePonte.webp`} alt="Guilherme Collection" />
+            <PhotoCard src={`${import.meta.env.BASE_URL}/images/guilherme_telemovel.webp`} alt="Guilherme Collection" />
 
         </div>
     </div>

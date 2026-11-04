@@ -93,6 +93,55 @@ body {
   text-transform: uppercase;
   color: #ffffff;
 }
+
+.gallery-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.gallery-trigger {
+    background: none;
+    border: none;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 0.8rem;
+}
+
+.gallery-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 180px;
+    background: black;
+    padding: 8px 0;
+
+    z-index: 1000;
+}
+
+.gallery-dropdown.open .gallery-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    white-space: nowrap;
+}
+
+.gallery-menu a:hover {
+    background: #333;
+}
+
+
+
 /* =========================
    LOGO / HEADER
 ========================= */
@@ -283,11 +332,13 @@ h1 {
 
     font-size: clamp(4rem, 19vw, 28rem);
     font-weight: 900;
-    line-height: 0.8;
+    line-height: 0.7;
 
     letter-spacing: -0.06em;
     white-space: nowrap;
 }
+
+
 
 .about-content {
   display: flex;
@@ -401,7 +452,7 @@ h1 {
 ========================= */
 
 .gallery {
-  column-count: 4;
+  column-count: 3;
   column-gap: 5px;
 }
 
@@ -548,7 +599,7 @@ h1 {
   background: none;
   border: none;
 
-  color: var(--accent);
+  color: #ffffff;
 
   font-size: 3rem;
 
