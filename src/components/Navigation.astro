@@ -6,6 +6,7 @@ import '../styles/global.css';
 const base = import.meta.env.BASE_URL;
 
 const galleries = [
+  { name: 'Câmera Escura', url: `${base}blackwhite` },
   { name: 'Street Photography', url: `${base}street` },
   { name: 'Retratos', url: `${base}portraits` },
   { name: 'Eventos', url: `${base}shows` },
@@ -46,8 +47,6 @@ const galleries = [
             ))}
         </div>
     </div>
-
-    <a href={`${base}blackwhite`}>Câmera Escura</a>
     <a href={`${base}about`}>Sobre + Contactos</a>
 
     <div class="separator"></div>

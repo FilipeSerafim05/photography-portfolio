@@ -330,11 +330,11 @@ h1 {
     color: white;
     text-align: center;
 
-    font-size: clamp(4rem, 19vw, 28rem);
+    font-size: clamp(4rem, 17vw, 28rem);
     font-weight: 900;
-    line-height: 0.7;
+    line-height: 0.6;
 
-    letter-spacing: -0.06em;
+    letter-spacing: -0.02em;
     white-space: nowrap;
 }
 
